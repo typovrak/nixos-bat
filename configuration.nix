@@ -27,7 +27,7 @@ in {
 		chown ${username}:${group} ${home}/.config/bat/themes/catppuccin-mocha.tmTheme
 		chmod 600 ${home}/.config/bat/themes/catppuccin-mocha.tmTheme
 
-		sudo -u ${username} ${pkgs.bat}/bin/bat cache --build
+		${pkgs.util-linux}/bin/runuser -u ${username} ${pkgs.bat}/bin/bat cache --build
 	'';
 
 	environment.systemPackages = with pkgs; [
