@@ -27,7 +27,7 @@ in {
 		chown ${username}:${group} ${home}/.config/bat/themes/catppuccin-mocha.tmTheme
 		chmod 600 ${home}/.config/bat/themes/catppuccin-mocha.tmTheme
 
-		${nixpkgs.bat}/bin/bat cache --build
+		${pkgs.bat}/bin/bat cache --build
 	'';
 
 	environment.systemPackages = with pkgs; [
