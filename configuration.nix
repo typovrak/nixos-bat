@@ -27,8 +27,7 @@ in {
 		chown ${username}:${group} ${home}/.config/bat/themes/catppuccin-mocha.tmTheme
 		chmod 600 ${home}/.config/bat/themes/catppuccin-mocha.tmTheme
 
-		BAT_CONFIG_PATH=${home}/.config/bat/config
-		${pkgs.bat}/bin/bat cache --build
+		sudo -u ${username} ${pkgs.bat}/bin/bat cache --build
 	'';
 
 	environment.systemPackages = with pkgs; [
